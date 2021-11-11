@@ -7,5 +7,5 @@ Code from courses at The University of Oslo
 - Algorithms and datastructures `Python`
 
 ## Less relevant
-- Robotics `MatLab
+- Robotics `MatLab`
 - Mathematics `MatLab` and `R`
