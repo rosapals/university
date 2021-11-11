@@ -1,3 +1,3 @@
 # README
 
-My code
+Code from courses at The University of Oslo
