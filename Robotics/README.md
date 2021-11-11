@@ -1,6 +1,6 @@
 ## Course: Introduction to Robotics (UiO)
 
--Language ```MatLab MatLab```
+- Language `MatLab`
 
 Scripts calculating forward kinematics,
 inverse kinematics and the jacobian matrix
