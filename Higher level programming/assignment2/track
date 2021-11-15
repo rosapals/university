@@ -1,0 +1,53 @@
+#!/bin/bash
+
+LOGFILE=~/.local/share/timer_logfile.txt
+LABEL="nolabel"
+task=$1
+status=$(tail -n 1 ${LOGFILE})
+first_char=${status:0:1}
+if [ ${task} == "start" ]; then
+    if [ $# -eq 2 ]; then
+      LABEL=$2
+    fi
+    if [ ${first_char} == "S" ]; then
+        echo "Task already in process"
+    else
+        echo "START $(date) ${LABEL}" >> ${LOGFILE}
+        echo "Task started"
+    fi
+else
+    if [ ${task} == "stop" ]; then
+        if [ ${first_char} == "E" ]; then
+            echo "Don't ... stop ... me NOOOW! Well you already stopped this task"
+        else
+            echo "END $(date)" >> ${LOGFILE}
+            echo "Task stopped"
+        fi
+    else
+        if [ ${task} == "status" ]; then
+            if [ ${first_char} == "S" ]; then
+                echo "Current task: ${status}"
+            else
+                echo "No task active"
+            fi
+        else
+            if [ ${task} == "log" ]; then
+                while read line; do
+                  if [ "$(echo ${line} | cut -d" " -f1)" == "START" ]; then
+                    # line begins with START
+                    start_in_seconds=$(date -d "$(echo ${line} | cut -d" " -f 3-7)" "+%s")
+                    label=$(echo ${line} | cut -d" " -f 8-)
+                  else
+                    # line begins with END
+                    stop_in_seconds=$(date -d "$(echo ${line} | cut -d" " -f 3-7)" "+%s")
+                    diff=$((${stop_in_seconds}-${start_in_seconds}))
+                    echo "${label}: $(($diff / 3600)):$(($((diff % 3600)) / 60)):$(($(($diff % 3600)) % 60))"
+                  fi
+                done < ${LOGFILE}
+            else
+                echo "Please submit one of the following arguments"
+                echo "> start [LABEL]"; echo "> stop"; echo "> status"
+            fi
+            fi
+        fi
+fi

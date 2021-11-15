@@ -1,0 +1,4 @@
+https://en.wikipedia.org/relative/path
+https://other.host/same-protocol
+https://example.com
+
