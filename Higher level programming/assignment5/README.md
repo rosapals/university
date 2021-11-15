@@ -1,8 +1,5 @@
 # Oblig5
 
-Dette er README for Oblig5 i IN3110 høsten 2021. Including information on how to run your scripts, required dependen- cies and packages (versions the code ran with and operating system) as well as how to install them. Documentation on how to run your examples is required.
-Including dependencies and their installation and commands you used for running your examples and creating your output files
-
 Task 5.1 uses module requests. To install write:
 ```sh
 $  python3 -m pip install requests
