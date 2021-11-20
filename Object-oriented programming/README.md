@@ -1,6 +1,6 @@
 ## Object-oriented programming/README
 
-- Course: Introduction to object-oriented programming
+- Course: Object-oriented programming
 - Language: `Java`
 
 Files from all assignments written in this course. Complexity of the assignments rise alongside the assignment number. "Oblig" or "Ob" means assignment.
@@ -25,3 +25,4 @@ Objects representing a labyrint
 
 - ob7-labyrintGUI:
 User interface of a labyrint, where clicking on a tile can show a way out
+
