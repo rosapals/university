@@ -26,10 +26,9 @@ or
 ### Missing Functionality
 
 Errors not handled by move.sh script
-    - User tries to move specified file types (ex py, java, txt) and they're
-      not found in src_dir
-    - User tries to move files from src_dir to src_dir
-    - No error displayed when moving files from empty directory
+- User tries to move specified file types (ex py, java, txt) and they're not found in src_dir
+- User tries to move files from src_dir to src_dir
+- No error displayed when moving files from empty directory
 - User may not choose name of new directory in case of non existing destination
   directory
 
