@@ -1,6 +1,6 @@
 # README
 
-Code from courses at The University of Oslo
+Schoolwork from courses at The University of Oslo
 
 ## Relevant
 - Advanced Topics in Artificial Intelligence 
